@@ -19,12 +19,17 @@ var CounterA = React.createClass({
 
   render: function() {
     return React.createElement('div', {},
-      React.createElement('button', {onClick: this.increment}, 'Increment'),
-      React.createElement('button', {onClick: this.decrement}, 'Decrement'),
+      React.createElement('button', {
+        onClick: this.increment
+      }, 'Increment'),
+      React.createElement('button', {
+        onClick: this.decrement
+      }, 'Decrement'),
       React.createElement('span', {}, 'Licznik A: ' + this.state.counter)
     );
   }
 });
+
 
 var CounterB = React.createClass({
   getInitialState: function() {
@@ -47,12 +52,17 @@ var CounterB = React.createClass({
 
   render: function() {
     return React.createElement('div', {},
-      React.createElement('button', {onClick: this.increment}, 'Increment'),
-      React.createElement('button', {onClick: this.decrement}, 'Decrement'),
+      React.createElement('button', {
+        onClick: this.increment
+      }, 'Increment'),
+      React.createElement('button', {
+        onClick: this.decrement
+      }, 'Decrement'),
       React.createElement('span', {}, 'Licznik B: ' + this.state.counter)
     );
   }
 });
+
 
 var CounterC = React.createClass({
   getInitialState: function() {
@@ -72,33 +82,38 @@ var CounterC = React.createClass({
       counter: this.state.counter - 1
     });
   },
-  componentWillMount: function () {
-		console.log('ComponentWillMount, Komponent za chwilę będzie zamontowany.');
-	},
-    componentDidMount: function () {
-    	console.log( 'componentDidMount, Komponent zamontowany.');
-    },
-    componentWillReceiveProps: function() {
-    	console.log('componentWillReceiveProps, Komponent odbiera nowe i aktualizuje atrybuty i stany (propsy i staty).');
-    },
-    shouldComponentUpdate: function () {
-    	console.log('Czy atrybut lub komponent wymaga aktualizacji?');
-    	return true;
-    },
-    componentWillUpdate: function() {
-    	console.log('Komponent będzie aktualizowany jeśli shouldComponentUpdate zwróci true. Nie można tutaj zmieniać stanów.');
-    },
-    componentDidUpdate: function() {
-    	console.log('Komponent jest aktualizowany. Można wprowadzać zmiany w DOM.');
-    },
-    componentWillUnmount: function(){
-    	console.log('Odmontowanie komponentu, usuwanie ich z DOM.');
-    },
+
+  componentWillMount: function() {
+    console.log('ComponentWillMount, Komponent za chwilę będzie zamontowany.');
+  },
+  componentDidMount: function() {
+    console.log('componentDidMount, Komponent zamontowany.');
+  },
+  componentWillReceiveProps: function() {
+    console.log('componentWillReceiveProps, Komponent odbiera nowe i aktualizuje atrybuty i stany (propsy i staty).');
+  },
+  shouldComponentUpdate: function() {
+    console.log('Czy atrybut lub komponent wymaga aktualizacji?');
+    return true;
+  },
+  componentWillUpdate: function() {
+    console.log('Komponent będzie aktualizowany jeśli shouldComponentUpdate zwróci true. Nie można tutaj zmieniać stanów.');
+  },
+  componentDidUpdate: function() {
+    console.log('Komponent jest aktualizowany. Można wprowadzać zmiany w DOM.');
+  },
+  componentWillUnmount: function() {
+    console.log('Odmontowanie komponentu, usuwanie ich z DOM.');
+  },
 
   render: function() {
     return React.createElement('div', {},
-      React.createElement('button', {onClick: this.increment}, 'Increment'),
-      React.createElement('button', {onClick: this.decrement}, 'Decrement'),
+      React.createElement('button', {
+        onClick: this.increment
+      }, 'Increment'),
+      React.createElement('button', {
+        onClick: this.decrement
+      }, 'Decrement'),
       React.createElement('span', {}, 'Licznik C: ' + this.state.counter + ' + console.logs')
     );
   }
@@ -111,15 +126,12 @@ var CounterC = React.createClass({
 //   }
 // })
 
-
 var element =
-	React.createElement('div', {},
-		React.createElement(CounterA, {},),
-    React.createElement(CounterB, {},),
-    React.createElement(CounterC, {},)//,
+  React.createElement('div', {},
+    React.createElement(CounterA, {}, ),
+    React.createElement(CounterB, {}, ),
+    React.createElement(CounterC, {}, ) //,
     // React.createElement(Counters, {},)
-	);
-
-
+  );
 
 ReactDOM.render(element, document.getElementById('app'));
