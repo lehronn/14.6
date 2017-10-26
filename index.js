@@ -1,70 +1,4 @@
-var CounterA = React.createClass({
-  getInitialState: function() {
-    return {
-      counter: 0
-    };
-  },
-
-  increment: function() {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-  },
-
-  decrement: function() {
-    this.setState({
-      counter: this.state.counter - 1
-    });
-  },
-
-  render: function() {
-    return React.createElement('div', {},
-      React.createElement('button', {
-        onClick: this.increment
-      }, 'Increment'),
-      React.createElement('button', {
-        onClick: this.decrement
-      }, 'Decrement'),
-      React.createElement('span', {}, 'Licznik A: ' + this.state.counter)
-    );
-  }
-});
-
-
-var CounterB = React.createClass({
-  getInitialState: function() {
-    return {
-      counter: 0
-    };
-  },
-
-  increment: function() {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-  },
-
-  decrement: function() {
-    this.setState({
-      counter: this.state.counter - 1
-    });
-  },
-
-  render: function() {
-    return React.createElement('div', {},
-      React.createElement('button', {
-        onClick: this.increment
-      }, 'Increment'),
-      React.createElement('button', {
-        onClick: this.decrement
-      }, 'Decrement'),
-      React.createElement('span', {}, 'Licznik B: ' + this.state.counter)
-    );
-  }
-});
-
-
-var CounterC = React.createClass({
+var Counter = React.createClass({
   getInitialState: function() {
     return {
       counter: 0
@@ -114,24 +48,16 @@ var CounterC = React.createClass({
       React.createElement('button', {
         onClick: this.decrement
       }, 'Decrement'),
-      React.createElement('span', {}, 'Licznik C: ' + this.state.counter + ' + console.logs')
+      React.createElement('span', {}, 'Licznik: ' + this.state.counter + ' + console.logs')
     );
   }
 });
 
-//spróbuję dopisać funkcję dodawania wartości wszystkich liczników.
-// var Counters = React.createClass({
-//   render: function() {
-//     return React.createElement('span', {}, 'Łączna suma liczników: ' + CounterA.counter + CounterB.counter + CounterC.counter )
-//   }
-// })
-
 var element =
   React.createElement('div', {},
-    React.createElement(CounterA, {}, ),
-    React.createElement(CounterB, {}, ),
-    React.createElement(CounterC, {}, ) //,
-    // React.createElement(Counters, {},)
+    React.createElement(Counter, {}, ),
+    React.createElement(Counter, {}, ),
+    React.createElement(Counter, {}, ) 
   );
 
 ReactDOM.render(element, document.getElementById('app'));
